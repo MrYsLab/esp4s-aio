@@ -9,6 +9,9 @@ esp4s-aio
 
 #####Y Bloque de texto y guía del usuario siempre en español - gracias, José Manuel Ruiz Gutiérrez
 
+##Usage: python3 esp4s-aio.py
+### Note, thay you may have to manually set the COM port to match your system (see esplora_serial.py). This will all be corrected in the future.
+
 <p align="center">
   <img src="https://raw.github.com/MrYsLab/esp4s/master/documentation/kids.png?raw=true" alt="Sublime's custom image"/>
 </p>
