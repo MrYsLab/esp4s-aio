@@ -1,6 +1,7 @@
 esp4s-aio
 =====
-##A remake of esp4s using Python 3.4 and asyncio
+##A remake of esp4s using Python 3.4 and asyncio - this is a work in progress.
+
 
 ### Now in 2 Languages!
 
