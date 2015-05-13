@@ -238,6 +238,11 @@ class Esp4sHttpServer():
 
     @asyncio.coroutine
     def retrieve_status(self, status_command):
+        """
+        This method retrieves status data for the supplied status command.
+        :param status_command: Command to be sent to the Esplora
+        :return: The data value for the requested sensor
+        """
         status_command += '\r\n'
         yield from self.serial_handler.write(status_command)
         data = yield from self.serial_handler.readline()
@@ -248,6 +253,7 @@ class Esp4sHttpServer():
         """
         This method retrieves the slider status value and returns it to HTTP client
         :param request: Command sent from Scratch/Snap!
+        :param poll: This flag is used to return sensor data as opposed to an HTTP reply string
         :return: HTTP response
         """
         data = yield from self.retrieve_status("p")
@@ -262,6 +268,7 @@ class Esp4sHttpServer():
         """
         This method retrieves the status value for the light sensor
         :param request: Command sent from Scratch/Snap!
+        :param poll: This flag is used to return sensor data as opposed to an HTTP reply string
         :return: HTTP response
         """
         data = yield from self.retrieve_status("l")
@@ -276,6 +283,7 @@ class Esp4sHttpServer():
         """
         This method retrieves the status value for the temperature sensor
         :param request: Command sent from Scratch/Snap!
+        :param poll: This flag is used to return sensor data as opposed to an HTTP reply string
         :return: HTTP response
         """
         data = yield from self.retrieve_status("t")
@@ -290,6 +298,7 @@ class Esp4sHttpServer():
         """
         This method retrieves the status value for the sound sensor
         :param request: Command sent from Scratch/Snap!
+        :param poll: This flag is used to return sensor data as opposed to an HTTP reply string
         :return: HTTP response
         """
         data = yield from self.retrieve_status("s")
@@ -304,6 +313,7 @@ class Esp4sHttpServer():
         """
         This method retrieves the current requested button state
         :param request: Command sent from Scratch/Snap!
+        :param poll: This flag is used to return sensor data as opposed to an HTTP reply string
         :return: response string containing current value
         """
 
@@ -334,6 +344,7 @@ class Esp4sHttpServer():
         """
         This method retrieves the current requested joystick status item state
         :param request: Command sent from Scratch/Snap!
+        :param poll: This flag is used to return sensor data as opposed to an HTTP reply string
         :return: response string containing current value
         """
         try:
@@ -361,6 +372,7 @@ class Esp4sHttpServer():
         """
         This method retrieves the current requested accelerometer axis status
         :param request: Command sent from Scratch/Snap!
+        :param poll: This flag is used to return sensor data as opposed to an HTTP reply string
         :return: response string containing current value
         """
         try:
@@ -388,6 +400,7 @@ class Esp4sHttpServer():
         """
         This method retrieves the current requested tinker kit input channel status
         :param request: Command sent from Scratch/Snap!
+        :param poll: This flag is used to return sensor data as opposed to an HTTP reply string
         :return: response string containing current value
         """
         try:
@@ -408,7 +421,7 @@ class Esp4sHttpServer():
         except MyHttpServerError as e:
             print(e.value)
 
-
+# a custom exception
 class MyHttpServerError(Exception):
     def __init__(self, value):
         self.value = value
@@ -417,7 +430,7 @@ class MyHttpServerError(Exception):
         return repr(self.value)
 
 
-# dummy requests supplied to support Scratch poll request
+# dummy requests supplied to sensor data retrieval methods to support Scratch poll requests
 class RequestBD:
     def __init__(self):
         self._match_info = None
