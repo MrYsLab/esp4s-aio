@@ -1,18 +1,18 @@
 esp4s-aio
 =====
-##A remake of esp4s using Python 3.4 and asyncio - this is a work in progress.
+## A remake of esp4s using Python 3.4 and asyncio - this is a work in progress.
 
 
 ### Now in 2 Languages!
 
-#####Block text and User's Guide provided in English
+##### Block text and User's Guide provided in English
 
-#####Y Bloque de texto y guía del usuario siempre en español - gracias, José Manuel Ruiz Gutiérrez
+##### Y Bloque de texto y guía del usuario siempre en español - gracias, José Manuel Ruiz Gutiérrez
 
-##Usage: python3 esp4s-aio.py COM_PORT
-####Where COM_PORT is the communications port for your system - e.g. /dev/ttyACM0 or COM4.
+## Usage: python3 esp4s-aio.py COM_PORT
+#### Where COM_PORT is the communications port for your system - e.g. /dev/ttyACM0 or COM4.
 
-####This project was developed using the PyCharm IDE and PyVmMonitor plugin.
+#### This project was developed using the PyCharm IDE and PyVmMonitor plugin.
 
 <p align="center">
   <img src="https://raw.github.com/MrYsLab/esp4s/master/documentation/kids.png?raw=true" alt="Sublime's custom image"/>
@@ -39,4 +39,4 @@ Yes! By combining an Arduino Esplora microcontroller with the esp4s library and 
 
 Fully Compatible with Windows, Linux and Mac
 
-###[Check out my driving skills in the "esp4s 500" ](https://www.youtube.com/watch?v=UgXZ5vZZ8zk)
+### [Check out my driving skills in the "esp4s 500" ](https://www.youtube.com/watch?v=UgXZ5vZZ8zk)
